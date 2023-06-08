@@ -13,15 +13,24 @@ body {
   display: grid;
 }
 
+#app {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+}
+
 .Items {
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, 200px);
+  max-width: 90%;
   display: grid;
 }
 
 .Card {
   border-radius: 5px;
+  width: 200px;
+  height: 350px;
   margin: 0 0 20px;
   text-decoration: none;
   animation-name: fade;
@@ -30,10 +39,25 @@ body {
 }
 
 .img-container {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.Card:hover .img-container {
   scroll-snap-points-x: repeat(150px);
   scroll-snap-type: x mandatory;
   display: flex;
   overflow-x: auto;
+}
+
+.visible {
+  padding: 5px 10px;
+  font-size: 12px;
+  display: none;
+}
+
+.Card:hover .visible {
+  display: block;
 }
 
 .Card img {
@@ -42,14 +66,26 @@ body {
   width: 100%;
   height: auto;
   margin-inline-end: 8px;
+  padding: 2px;
 }
 
 .Card h2 {
   justify-content: space-between;
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 300;
   display: flex;
+}
+
+small {
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+small span {
+  color: #24b504;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 @keyframes fade {
