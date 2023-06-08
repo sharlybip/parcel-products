@@ -15,31 +15,38 @@ body {
 }
 
 .Items {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
   display: grid;
 }
-
+ 
 .Card {
   text-decoration: none;
   box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
     1px 3px 8px rgba(39, 44, 49, 0.03);
   border-radius: 5px;
   margin: 0 0 20px 0;
-  display: block;
   animation-duration: 4s;
   animation-name: fade;
 }
+.img-container {
 
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-points-x: repeat(150px);
+  scroll-snap-type: x mandatory;
+}
 .Card img {
   width: 100%;
   height: auto;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
+  margin-inline-end: 8px;
+  scroll-snap-align: center;
 }
 
 .Card h2 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   padding: 5px 10px;
   display: flex;

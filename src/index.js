@@ -1,6 +1,9 @@
-const $app = document.getElementById('app');
-const baseUrl = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=10';
 
+
+const app = document.getElementById('app');
+
+const baseUrl = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=10';
+console.log("uyyy");
 
 const main = async() => {
     const response =  await fetch(baseUrl);
@@ -9,16 +12,25 @@ const main = async() => {
     const output =  products?.map(product => {
         return `
             <article class="Card">
-                <img class="" href="${product.images[0]}">
+                <div class="img-container">
+                    <img class="img" src="${product.images[0]}">
+                    <img class="img" src="${product.images[1]}">
+                    <img class="img" src="${product.images[2]}">
+                
+                </div>
+                <small>$ ${product.price}</small>
                 <h2>
-                    ${product.title}<small>Precio $ ${product.price}</small>
+                    ${product.title}
                 </h2>
             </article>
         `;
     }).join('');
 
-    let newItem = document.createElement('section.Item');
+    let newItem = document.createElement('section');
+    newItem.className = "Items";
+    newItem.innerHTML = await output;
     
-    $app.append(newItem);
+    app.appendChild(newItem);
 
 }
+main();

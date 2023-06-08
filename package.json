@@ -5,7 +5,8 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel serve --port 8080 src/index.html",
-    "build": "parcel build src/index.html --public-url ./"
+    "build": "parcel build src/index.html --public-url ./",
+    "postbuild": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Carlos Dominguez <sharlybip@gmail.com>",
@@ -13,5 +14,9 @@
   "devDependencies": {
     "parcel": "^2.9.1",
     "posthtml-include": "^1.7.4"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "hyperscript": "^2.0.2"
   }
 }
