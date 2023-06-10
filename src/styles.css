@@ -5,23 +5,61 @@ body {
   padding: 0;
   color: #3c484e;
   font-family: "Open Sans", sans-serif;
-}
 
-.Main {
+  position: relative;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(145, 207, 2);
+}
+header div:nth-child(1) h1{
+  width:80px;
+}
+header div:nth-child(2),
+header div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+header div:nth-child(2) {
+  background-color: rgb(4, 47, 8);
   padding: 10px;
+  border-radius: 3rem;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: small;
+  color: white;
+  padding: 4px;
+  width: fit-content;
+}
+.Main {
   grid-template-columns: minmax(auto, 768px);
   display: grid;
   justify-content: center;
 }
+#app {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 80vh;
+}
 
 .Items {
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  grid-row-gap: 1.5em;
-  display: grid;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat( auto-fill, 200px);
+    max-width: 1100px;
+    margin-right: 10px;
 }
  
 .Card {
+  width: 200px;
   text-decoration: none;
   box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
     1px 3px 8px rgba(39, 44, 49, 0.03);
@@ -29,28 +67,59 @@ body {
   margin: 0 0 20px 0;
   animation-duration: 4s;
   animation-name: fade;
+  height: 350px;
 }
-.img-container {
 
+.img-container {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-points-x: repeat(150px);
-  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
+
+}
+
+.Card:hover .img-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+.visible {
+    display: none;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+.Card:hover .visible {
+    display: block;
 }
 .Card img {
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
   border-radius: 5px;
   margin-inline-end: 8px;
   scroll-snap-align: center;
 }
 
 .Card h2 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 300;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
+}
+small {
+    font-weight: bold;
+    padding: 5px 10px;
+}
+small span {
+    font-size: 10px;
+    color: #24b504;
+    font-weight: bold;
+    
+}
+.noMore {
+  background-color: #24b504;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 
 @keyframes fade {
@@ -60,4 +129,52 @@ body {
   to {
     opacity: 1;
   }
+}
+
+@media (max-width: 1150px) {
+  .Items {
+    max-width: 90%;
+  }
+}
+@media (max-width:500px){
+  header {
+    flex-direction: column;
+  }
+  .Items {
+    width: 100%;
+    grid-template-columns: repeat( 2, 160px);
+    place-content: center;
+  }
+  .Card {
+    width: 160px;
+  }
+  .Card .img-container,
+  .Card .img-container img{
+    width: 100%;
+    height: auto;
+  }
+}
+/*Scrooll */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(145, 207, 2);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(145, 207, 2);
 }

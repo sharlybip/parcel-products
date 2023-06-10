@@ -1,0 +1,38 @@
+html {
+    font-family: sans-serif;
+}
+button, #btn {
+    top: 50vh;
+    text-align: center; 
+    padding:5px 18px; 
+    font-size: 3rem; 
+    border-radius: 3rem;
+    background-color: rgb(104, 205, 9);
+    border: none;
+    color: white;
+    justify-self: flex-start;
+    max-height: 6rem;
+    max-width: 20rem;
+    cursor: pointer;
+}
+form {
+    display: flex;
+    flex-direction: column;
+
+}
+form div label{
+    display: inline-block;
+    width: 9rem;
+    text-align: right;
+    color: rgb(4, 4, 75);
+}
+form div input {
+    height: 2rem;
+    width: 30%;
+    border-radius: 2rem;
+    margin-block-end: 1rem;
+    border: 2px solid rgb(239, 93, 82);
+    outline-color: rgb(205, 205, 13);
+    padding: 1rem;
+    
+}
