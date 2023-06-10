@@ -8,7 +8,6 @@ body {
 }
 
 header {
-  z-index: 2;
   background-color: #91cf02;
   justify-content: space-around;
   align-items: center;

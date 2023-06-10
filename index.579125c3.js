@@ -22,7 +22,7 @@ const main = async (page)=>{
             <div class="img-container">
             ${images}
             </div>
-            <small>$ ${product.price}  <span>${Math.floor(Math.random() * 10)}% Emvio gratis</span></small>
+            <small>$ ${product.price}  <span>${Math.floor(Math.random() * 10)}% Envio gratis</span></small>
             <h2>
             ${product.title}
             </h2>
