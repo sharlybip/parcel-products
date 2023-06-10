@@ -154,17 +154,18 @@ small span {
   }
 
   .Items {
-    grid-template-columns: repeat(2, 120px);
+    grid-template-columns: repeat(2, 150px);
+    place-content: center;
     width: 100%;
   }
 
   .Card {
-    width: 120px;
+    width: 150px;
   }
 
   .Card .img-container, .Card .img-container img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
 }
 
