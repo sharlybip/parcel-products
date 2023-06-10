@@ -31,6 +31,7 @@ header div:nth-child(2), header div:first-child {
 header div:nth-child(2) {
   background-color: #042f08;
   border-radius: 3rem;
+  margin-bottom: 10px;
   padding: 10px;
 }
 
@@ -57,7 +58,7 @@ header p {
 }
 
 .Items {
-  grid-gap: 1.5em;
+  grid-gap: 1em;
   grid-template-columns: repeat(auto-fill, 200px);
   max-width: 1100px;
   margin-right: 10px;
@@ -150,6 +151,20 @@ small span {
 @media (width <= 500px) {
   header {
     flex-direction: column;
+  }
+
+  .Items {
+    grid-template-columns: repeat(2, 120px);
+    width: 100%;
+  }
+
+  .Card {
+    width: 120px;
+  }
+
+  .Card .img-container, .Card .img-container img {
+    width: 120px;
+    height: 120px;
   }
 }
 
