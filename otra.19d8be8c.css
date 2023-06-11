@@ -2,6 +2,18 @@ html {
   font-family: sans-serif;
 }
 
+a {
+  color: #030393;
+  text-decoration: none;
+}
+
+section p {
+  text-align: center;
+  background-color: #91cf02;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
 button, #btn {
   text-align: center;
   color: #fff;
@@ -17,15 +29,17 @@ button, #btn {
 }
 
 #btn {
+  z-index: 3;
+  transition: all 2s;
   position: fixed;
   top: auto;
   bottom: 10px;
   right: 10px;
 }
 
-#btn:before {
-  content: " ➙";
-  transform: rotate(45deg);
+.btn-click {
+  animation-name: down;
+  animation-duration: 2s;
 }
 
 form {
@@ -75,6 +89,28 @@ form div input {
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes down {
+  0% {
+    opacity: .8;
+    transform: translateY(30px);
+  }
+
+  25% {
+    opacity: .9;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: .9;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: .8;
+    transform: translateY(0);
   }
 }
 

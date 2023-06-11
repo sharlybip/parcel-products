@@ -19,6 +19,12 @@ const generateImage = (API)=>{
 append.append(generateImage(), generateImage(), generateImage());
 btn.addEventListener("click", ()=>{
     append.append(generateImage());
+    btn.innerText = "⇣";
+    btn.classList.toggle("btn-click");
+    setTimeout(()=>{
+        btn.innerText = "+";
+        btn.classList.remove("btn-click");
+    }, 2000);
 });
 const data = {
     "title": `${title.value}`,
